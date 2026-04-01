@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZYNX3D</title>
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #151922;
+      --muted: #9aa4b2;
+      --text: #f5f7fa;
+      --accent: #00e5ff;
+      --border: #2a2f36;
+      --ok: #1fbf75;
+      --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(11,13,16,.92);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      opacity: .9;
+    }
+    .hero {
+      padding: 88px 0 56px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 32px;
+      align-items: center;
+    }
+    h1 {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+    .lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn.primary {
+      background: var(--accent);
+      color: #031014;
+      border-color: transparent;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.18);
+    }
+    .section {
+      padding: 28px 0 56px;
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      margin: 0 0 18px;
+    }
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .muted { color: var(--muted); }
+    form {
+      display: grid;
+      gap: 12px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #0f1319;
+      color: var(--text);
+    }
+    textarea { min-height: 140px; resize: vertical; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: .95rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 700;
+      background: #1a202b;
+      border: 1px solid var(--border);
+    }
+    .status-nova { color: #93c5fd; }
+    .status-tlaci { color: var(--warn); }
+    .status-hotove { color: var(--ok); }
+    .admin-wrap { display: none; }
+    .success, .error {
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: .95rem;
+      margin-top: 10px;
+    }
+    .success { background: rgba(31,191,117,.12); border: 1px solid rgba(31,191,117,.35); }
+    .error { background: rgba(239,68,68,.12); border: 1px solid rgba(239,68,68,.35); }
+    footer {
+      padding: 28px 0 40px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+      .hero, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">ZYNX<span>3D</span></div>
+        <div class="nav-links">
+          <a href="#sluzby">Služby</a>
+          <a href="#ukazky">Ukážky</a>
+          <a href="#dopyt">Dopyt</a>
+          <a href="#admin">Admin</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div>
+        <h1>Rýchle technické diely, prototypy a malé série pre firmy.</h1>
+        <p class="lead">Navrhujeme a vyrábame funkčné diely, kryty, držiaky a prototypy. Stačí poslať fotku, STL alebo náčrt — ozveme sa s riešením.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="#dopyt">Odoslať dopyt</a>
+          <a class="btn" href="#admin">Interný dashboard</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Čo vie web hneď teraz</h3>
+        <ul class="muted">
+          <li>zapísať nový dopyt do databázy</li>
+          <li>zobraziť posledné objednávky</li>
+          <li>prihlásenie do interného dashboardu</li>
+          <li>základ pre klientov, diely a tlač</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="sluzby" class="section">
+      <div class="container">
+        <h2>Služby</h2>
+        <div class="grid grid-3">
+          <div class="card"><strong>CAD návrh</strong><p class="muted">Návrh a úprava dielov podľa použitia, rozmerov a materiálu.</p></div>
+          <div class="card"><strong>3D tlač</strong><p class="muted">Prototypy, funkčné diely a malé série z technických materiálov.</p></div>
+          <div class="card"><strong>Rýchle doručenie</strong><p class="muted">Prioritné objednávky a urgentné riešenia pre firmy.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ukazky" class="section">
+      <div class="container">
+        <h2>Ukážky</h2>
+        <div class="grid grid-3">
+          <div class="card"><strong>Kryt elektroniky</strong><p class="muted">PETG / ASA, prototyp + finálny diel.</p></div>
+          <div class="card"><strong>Držiak senzora</strong><p class="muted">Technický diel pre automatizáciu.</p></div>
+          <div class="card"><strong>Montážny prípravok</strong><p class="muted">Rýchla séria pre výrobný proces.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dopyt" class="section">
+      <div class="container grid grid-2">
+        <div>
+          <h2>Nový dopyt</h2>
+          <p class="muted">Tento formulár zapíše dopyt priamo do databázy Supabase.</p>
+          <form id="inquiryForm">
+            <input type="text" id="company_name" placeholder="Firma alebo meno" required />
+            <input type="email" id="email" placeholder="E-mail" required />
+            <input type="tel" id="phone" placeholder="Telefón" />
+            <input type="text" id="title" placeholder="Názov projektu / dielu" required />
+            <select id="service_type" required>
+              <option value="">Vyber službu</option>
+              <option value="cad_navrh">CAD návrh</option>
+              <option value="3d_tlac">3D tlač</option>
+              <option value="prototyp">Prototyp</option>
+              <option value="mala_seria">Malá séria</option>
+            </select>
+            <textarea id="description" placeholder="Popíš problém, diel alebo zadanie" required></textarea>
+            <button class="btn primary" type="submit">Odoslať dopyt</button>
+          </form>
+          <div id="formMessage"></div>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Ako to funguje</h3>
+          <ol class="muted">
+            <li>Klient vyplní formulár.</li>
+            <li>Dopyt sa uloží do tabuľky <code>inquiries</code>.</li>
+            <li>Ty ho uvidíš v admin dashboarde.</li>
+            <li>Neskôr z neho vieš spraviť objednávku.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin" class="section">
+      <div class="container">
+        <h2>Interný dashboard</h2>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3 style="margin-top:0">Prihlásenie</h3>
+            <form id="loginForm">
+              <input type="email" id="loginEmail" placeholder="Admin e-mail" required />
+              <input type="password" id="loginPassword" placeholder="Heslo" required />
+              <button class="btn primary" type="submit">Prihlásiť sa</button>
+            </form>
+            <div id="loginMessage"></div>
+          </div>
+          <div class="card">
+            <h3 style="margin-top:0">Poznámka</h3>
+            <p class="muted">Použitý je Supabase Auth. V produkcii si pridaj RLS pravidlá a samostatných admin používateľov.</p>
+            <button class="btn" id="logoutBtn" type="button">Odhlásiť sa</button>
+          </div>
+        </div>
+
+        <div class="admin-wrap" id="adminPanel">
+          <div class="card" style="margin-top:18px;">
+            <h3 style="margin-top:0">Posledné dopyty</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Firma</th>
+                  <th>Projekt</th>
+                  <th>Služba</th>
+                  <th>Stav</th>
+                </tr>
+              </thead>
+              <tbody id="inquiriesTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">ZYNX3D — interný starter pre GitHub Pages + Supabase.</div>
+  </footer>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+    // 1. SEM DOPLŇ SVOJE ÚDAJE ZO SUPABASE
+    const SUPABASE_URL = 'https://YOUR_PROJECT.supabase.co'
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY'
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+    const inquiryForm = document.getElementById('inquiryForm')
+    const formMessage = document.getElementById('formMessage')
+    const loginForm = document.getElementById('loginForm')
+    const loginMessage = document.getElementById('loginMessage')
+    const adminPanel = document.getElementById('adminPanel')
+    const inquiriesTableBody = document.getElementById('inquiriesTableBody')
+    const logoutBtn = document.getElementById('logoutBtn')
+
+    function showMessage(element, text, type = 'success') {
+      element.innerHTML = `<div class="${type}">${text}</div>`
+    }
+
+    async function submitInquiry(event) {
+      event.preventDefault()
+
+      const payload = {
+        company_name: document.getElementById('company_name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        title: document.getElementById('title').value.trim(),
+        service_type: document.getElementById('service_type').value,
+        description: document.getElementById('description').value.trim(),
+        status: 'nova'
+      }
+
+      const { error } = await supabase.from('inquiries').insert([payload])
+
+      if (error) {
+        showMessage(formMessage, `Chyba pri ukladaní dopytu: ${error.message}`, 'error')
+        return
+      }
+
+      inquiryForm.reset()
+      showMessage(formMessage, 'Dopyt bol úspešne odoslaný.')
+    }
+
+    async function loginAdmin(event) {
+      event.preventDefault()
+
+      const email = document.getElementById('loginEmail').value.trim()
+      const password = document.getElementById('loginPassword').value
+
+      const { error } = await supabase.auth.signInWithPassword({ email, password })
+
+      if (error) {
+        showMessage(loginMessage, `Prihlásenie zlyhalo: ${error.message}`, 'error')
+        return
+      }
+
+      showMessage(loginMessage, 'Prihlásenie úspešné.')
+      await loadInquiries()
+      adminPanel.style.display = 'block'
+    }
+
+    async function logoutAdmin() {
+      await supabase.auth.signOut()
+      adminPanel.style.display = 'none'
+      inquiriesTableBody.innerHTML = ''
+      showMessage(loginMessage, 'Odhlásený.')
+    }
+
+    async function loadInquiries() {
+      const { data, error } = await supabase
+        .from('inquiries')
+        .select('id, company_name, title, service_type, status')
+        .order('id', { ascending: false })
+        .limit(20)
+
+      if (error) {
+        inquiriesTableBody.innerHTML = `<tr><td colspan="5">Chyba: ${error.message}</td></tr>`
+        return
+      }
+
+      if (!data || data.length === 0) {
+        inquiriesTableBody.innerHTML = '<tr><td colspan="5">Zatiaľ žiadne dopyty.</td></tr>'
+        return
+      }
+
+      inquiriesTableBody.innerHTML = data.map(item => `
+        <tr>
+          <td>#${item.id}</td>
+          <td>${item.company_name || ''}</td>
+          <td>${item.title || ''}</td>
+          <td>${item.service_type || ''}</td>
+          <td><span class="badge status-${(item.status || '').toLowerCase()}">${item.status || ''}</span></td>
+        </tr>
+      `).join('')
+    }
+
+    async function checkSession() {
+      const { data } = await supabase.auth.getSession()
+      if (data.session) {
+        adminPanel.style.display = 'block'
+        await loadInquiries()
+      }
+    }
+
+    inquiryForm.addEventListener('submit', submitInquiry)
+    loginForm.addEventListener('submit', loginAdmin)
+    logoutBtn.addEventListener('click', logoutAdmin)
+
+    checkSession()
+  </script>
+</body>
+</html>
