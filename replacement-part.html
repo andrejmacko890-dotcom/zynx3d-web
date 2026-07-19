@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Náhradný diel | ZYNX3D
+
+    </title>
+
+    <meta
+        name="description"
+        content="Vyžiadajte si výrobu náhradného dielu pomocou profesionálneho reverse engineeringu.">
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+<header id="header">
+
+    <div class="container">
+
+        <a href="index.html" class="logo">
+
+            ZYNX<span class="accent">3D</span>
+
+        </a>
+
+    </div>
+
+</header>
+
+<main>
+
+
+<!-- ========================================================= -->
+<!-- HERO -->
+<!-- ========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="sectionHeader">
+
+            <span class="sectionBadge">
+
+                Formulár 2
+
+            </span>
+
+            <h1>
+
+                Potrebujem náhradný diel
+
+            </h1>
+
+            <p>
+
+                Nemáte 3D model? Nevadí.
+                Nahrajte fotografie poškodeného alebo chýbajúceho dielu
+                a my pripravíme nový CAD model aj výrobu.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================================= -->
+<!-- PROGRESS -->
+<!-- ========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="wizardProgress">
+
+            <div class="wizardStep active" data-step="1">
+
+                <div class="wizardCircle">1</div>
+
+                <div class="wizardLabel">
+
+                    Kontaktné údaje
+
+                </div>
+
+            </div>
+
+            <div class="wizardLine"></div>
+
+            <div class="wizardStep" data-step="2">
+
+                <div class="wizardCircle">2</div>
+
+                <div class="wizardLabel">
+
+                    Model
+
+                </div>
+
+            </div>
+
+            <div class="wizardLine"></div>
+
+            <div class="wizardStep" data-step="3">
+
+                <div class="wizardCircle">3</div>
+
+                <div class="wizardLabel">
+
+                    Výroba
+
+                </div>
+
+            </div>
+
+            <div class="wizardLine"></div>
+
+            <div class="wizardStep" data-step="4">
+
+                <div class="wizardCircle">4</div>
+
+                <div class="wizardLabel">
+
+                    Kontrola
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- STEP 1 -->
+<!-- ========================================================= -->
+
+<section class="section" id="step1">
+
+    <div class="container">
+
+        <div class="formCard">
+
+            <div class="formHeader">
+
+                <span class="sectionBadge">
+
+                    Krok 1 zo 4
+
+                </span>
+
+                <h2>
+
+                    Kontaktné údaje
+
+                </h2>
+
+                <p>
+
+                    Vyplňte svoje kontaktné údaje.
+                    Povinné polia sú označené *.
+
+                </p>
+
+            </div>
+
+            <form id="replacementForm">
+
+                <div class="formGrid">
+
+                    <div class="formGroup">
+
+                        <label for="firstName">
+
+                            Meno *
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="firstName"
+                            required>
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label for="lastName">
+
+                            Priezvisko *
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="lastName"
+                            required>
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label for="email">
+
+                            E-mail *
+
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            required>
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label for="phone">
+
+                            Telefón *
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            required>
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label for="company">
+
+                            Firma
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="company">
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label for="ico">
+
+                            IČO
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="ico">
+
+                    </div>
+
+                </div>
+
+                <div class="formGroup">
+
+                    <label for="note">
+
+                        Poznámka
+
+                    </label>
+
+                    <textarea
+                        id="note"
+                        rows="6"
+                        placeholder="Napríklad kde sa diel používa alebo ďalšie dôležité informácie..."></textarea>
+
+                </div>
+
+                <div class="formActions">
+
+                    <button
+                        type="button"
+                        id="nextStep1"
+                        class="primaryButton">
+
+                        Pokračovať →
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- STEP 2 -->
+<!-- ========================================================= -->
+
+<section class="section" id="step2" style="display:none;">
+
+    <div class="container">
+
+        <div class="formCard">
+
+            <div class="formHeader">
+
+                <span class="sectionBadge">
+
+                    Krok 2 zo 4
+
+                </span>
+
+                <h2>
+
+                    Informácie o náhradnom diele
+
+                </h2>
+
+                <p>
+
+                    Nahrajte fotografie a poskytnite čo najviac informácií.
+                    Čím viac údajov zadáte, tým presnejšie pripravíme cenovú ponuku.
+
+                </p>
+
+            </div>
+
+            <form id="replacementStep2">
+
+                <!-- Čo máte k dispozícii -->
+
+                <div class="formGroup">
+
+                    <label>
+
+                        Čo máte k dispozícii? *
+
+                    </label>
+
+                    <select id="availableData" required>
+
+                        <option value="">Vyberte možnosť</option>
+                        <option>Iba fotografie</option>
+                        <option>Poškodený diel</option>
+                        <option>Funkčný diel</option>
+                        <option>Technický výkres</option>
+                        <option>Fotografie + diel</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Upload -->
+
+                <div class="formGroup">
+
+                    <label>
+
+                        Nahrajte fotografie *
+
+                    </label>
+
+                    <div class="uploadArea" id="photoUploadArea">
+
+                        <div class="uploadIcon">
+
+                            📷
+
+                        </div>
+
+                        <h3>
+
+                            Presuňte fotografie sem
+
+                        </h3>
+
+                        <p>
+
+                            alebo kliknite na výber súborov
+
+                        </p>
+
+                        <input
+                            type="file"
+                            id="replacementPhotos"
+                            accept=".jpg,.jpeg,.png,.webp,.heic"
+                            multiple
+                            hidden>
+
+                        <button
+                            type="button"
+                            id="selectPhotos"
+                            class="primaryButton">
+
+                            Vybrať fotografie
+
+                        </button>
+
+                    </div>
+
+                    <div id="photoInfo"></div>
+
+                </div>
+
+                <!-- Rozmery -->
+
+                <div class="formGrid">
+
+                    <div class="formGroup">
+
+                        <label>
+
+                            Dĺžka (mm)
+
+                        </label>
+
+                        <input
+                            type="number"
+                            min="0">
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label>
+
+                            Šírka (mm)
+
+                        </label>
+
+                        <input
+                            type="number"
+                            min="0">
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label>
+
+                            Výška (mm)
+
+                        </label>
+
+                        <input
+                            type="number"
+                            min="0">
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label>
+
+                            Materiál (ak ho poznáte)
+
+                        </label>
+
+                        <select>
+
+                            <option>Neviem</option>
+                            <option>Plast</option>
+                            <option>Guma</option>
+                            <option>Kov</option>
+                            <option>Iné</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- Popis -->
+
+                <div class="formGroup">
+
+                    <label>
+
+                        Popis dielu alebo problému
+
+                    </label>
+
+                    <textarea
+                        rows="7"
+                        placeholder="Napríklad: Ide o plastový držiak z auta, ktorý praskol pri skrutke..."></textarea>
+
+                </div>
+
+                <div class="formActions">
+
+                    <button
+                        type="button"
+                        id="backStep2"
+                        class="secondaryButton">
+
+                        ← Späť
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="nextStep2"
+                        class="primaryButton">
+
+                        Pokračovať →
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- STEP 3 -->
+<!-- ========================================================= -->
+
+<section class="section" id="step3" style="display:none;">
+
+    <div class="container">
+
+        <div class="formCard">
+
+            <div class="formHeader">
+
+                <span class="sectionBadge">
+
+                    Krok 3 zo 4
+
+                </span>
+
+                <h2>
+
+                    Použitie a výroba
+
+                </h2>
+
+                <p>
+
+                    Pomôžte nám navrhnúť čo najlepšie riešenie pre váš diel.
+
+                </p>
+
+            </div>
+
+            <form id="replacementStep3">
+
+                <!-- Použitie -->
+
+                <div class="formGroup">
+
+                    <label>
+
+                        Kde sa bude diel používať? *
+
+                    </label>
+
+                    <select id="applicationArea" required>
+
+                        <option value="">Vyberte...</option>
+                        <option>Automobil</option>
+                        <option>Motocykel</option>
+                        <option>Domácnosť</option>
+                        <option>Priemyselný stroj</option>
+                        <option>Záhrada</option>
+                        <option>Elektronika</option>
+                        <option>Iné</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Zaťaženie -->
+
+                <div class="formGroup">
+
+                    <label>
+
+                        Predpokladané zaťaženie
+
+                    </label>
+
+                    <select id="loadType">
+
+                        <option>Neviem</option>
+                        <option>Nízke</option>
+                        <option>Stredné</option>
+                        <option>Vysoké</option>
+                        <option>Extrémne</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Prostredie -->
+
+                <div class="formGrid">
+
+                    <div class="formGroup">
+
+                        <label>
+
+                            Prostredie
+
+                        </label>
+
+                        <select id="environment">
+
+                            <option>Interiér</option>
+                            <option>Exteriér</option>
+                            <option>Vlhké prostredie</option>
+                            <option>UV žiarenie</option>
+                            <option>Vysoká teplota</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label>
+
+                            Počet kusov
+
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantity"
+                            value="1"
+                            min="1">
+
+                    </div>
+
+                </div>
+
+                <!-- Termín -->
+
+                <div class="formGroup">
+
+                    <label>
+
+                        Požadovaný termín
+
+                    </label>
+
+                    <select id="deadline">
+
+                        <option>Štandardný</option>
+                        <option>Expres (24–48 hodín)</option>
+                        <option>Do konkrétneho dátumu</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Poznámka -->
+
+                <div class="formGroup">
+
+                    <label>
+
+                        Ďalšie požiadavky
+
+                    </label>
+
+                    <textarea
+                        id="requirements"
+                        rows="6"
+                        placeholder="Farba, povrch, závity, tolerancie alebo iné požiadavky..."></textarea>
+
+                </div>
+
+                <div class="formActions">
+
+                    <button
+                        type="button"
+                        id="backToStep2"
+                        class="secondaryButton">
+
+                        ← Späť
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="nextToStep4"
+                        class="primaryButton">
+
+                        Pokračovať →
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- STEP 4 -->
+<!-- ========================================================= -->
+
+<section class="section" id="step4" style="display:none;">
+
+    <div class="container">
+
+        <div class="formCard">
+
+            <div class="formHeader">
+
+                <span class="sectionBadge">
+
+                    Krok 4 zo 4
+
+                </span>
+
+                <h2>
+
+                    Kontrola a odoslanie
+
+                </h2>
+
+                <p>
+
+                    Pred odoslaním si skontrolujte všetky zadané údaje.
+
+                </p>
+
+            </div>
+
+            <!-- ========================================================= -->
+            <!-- Kontaktné údaje -->
+            <!-- ========================================================= -->
+
+            <div class="summaryCard">
+
+                <h3>
+
+                    👤 Kontaktné údaje
+
+                </h3>
+
+                <div class="summaryGrid">
+
+                    <div class="summaryRow">
+
+                        <span>Meno</span>
+
+                        <strong id="summaryFirstName">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>Priezvisko</span>
+
+                        <strong id="summaryLastName">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>E-mail</span>
+
+                        <strong id="summaryEmail">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>Telefón</span>
+
+                        <strong id="summaryPhone">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>Firma</span>
+
+                        <strong id="summaryCompany">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>IČO</span>
+
+                        <strong id="summaryIco">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>Poznámka</span>
+
+                        <strong id="summaryNote">-</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ========================================================= -->
+            <!-- Náhradný diel -->
+            <!-- ========================================================= -->
+
+            <div class="summaryCard">
+
+                <h3>
+
+                    🔩 Náhradný diel
+
+                </h3>
+
+                <div class="summaryGrid">
+
+                    <div class="summaryRow">
+
+                        <span>Nahrané fotografie</span>
+
+                        <strong id="summaryPhotos">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>Nahraný diel</span>
+
+                        <strong id="summaryPartFile">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>Rozmery</span>
+
+                        <strong id="summaryDimensions">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>Materiál</span>
+
+                        <strong id="summaryMaterial">-</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ========================================================= -->
+            <!-- Požiadavky -->
+            <!-- ========================================================= -->
+
+            <div class="summaryCard">
+
+                <h3>
+
+                    ⚙️ Požiadavky
+
+                </h3>
+
+                <div class="summaryGrid">
+
+                    <div class="summaryRow">
+
+                        <span>Použitie dielu</span>
+
+                        <strong id="summaryUsage">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>Zaťaženie</span>
+
+                        <strong id="summaryLoad">-</strong>
+
+                    </div>
+
+                    <div class="summaryRow">
+
+                        <span>Počet kusov</span>
+
+                        <strong id="summaryQuantity">-</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ========================================================= -->
+            <!-- Čo bude nasledovať -->
+            <!-- ========================================================= -->
+
+            <div class="summaryCard">
+
+                <h3>
+
+                    📩 Čo bude nasledovať?
+
+                </h3>
+
+                <ul class="summaryList">
+
+                    <li>✔ Skontrolujeme všetky podklady.</li>
+
+                    <li>✔ Posúdime možnosti výroby náhradného dielu.</li>
+
+                    <li>✔ V prípade potreby odporučíme vhodnejší materiál alebo technológiu výroby.</li>
+
+                    <li>✔ Pripravíme cenovú ponuku.</li>
+
+                    <li>✔ Počas pracovných dní vás budeme kontaktovať čo najskôr, zvyčajne do 24 hodín.</li>
+
+                </ul>
+
+            </div>
+
+            <!-- ========================================================= -->
+            <!-- Súhlasy -->
+            <!-- ========================================================= -->
+
+            <div class="formGroup">
+
+                <label class="checkboxLabel">
+
+                    <input
+                        type="checkbox"
+                        id="confirmData">
+
+                    Potvrdzujem, že všetky uvedené údaje sú správne.
+
+                </label>
+
+            </div>
+
+            <div class="formGroup">
+
+                <label class="checkboxLabel">
+
+                    <input
+                        type="checkbox"
+                        id="gdprConsent">
+
+                    Súhlasím so spracovaním osobných údajov podľa GDPR.
+
+                </label>
+
+            </div>
+
+            <div class="formGroup">
+
+                <label class="checkboxLabel">
+
+                    <input
+                        type="checkbox"
+                        id="termsConsent">
+
+                    Súhlasím s Obchodnými podmienkami.
+
+                </label>
+
+            </div>
+
+            <!-- ========================================================= -->
+            <!-- Tlačidlá -->
+            <!-- ========================================================= -->
+
+            <div class="formActions">
+
+                <button
+                    type="button"
+                    id="backToStep3"
+                    class="secondaryButton">
+
+                    ← Späť
+
+                </button>
+
+                <button
+                    type="submit"
+                    id="submitInquiry"
+                    class="primaryButton"
+                    disabled>
+
+                    Odoslať dopyt
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- SUCCESS -->
+<!-- ========================================================= -->
+
+<section
+    class="section"
+    id="successScreen"
+    style="display:none;">
+
+    <div class="container">
+
+        <div class="formCard successCard">
+
+            <div class="successIcon">
+
+                ✅
+
+            </div>
+
+            <h1>
+
+                Ďakujeme za váš dopyt!
+
+            </h1>
+
+            <p class="successText">
+
+                Vaša požiadavka bola úspešne prijatá.
+
+                Náš tím teraz analyzuje váš náhradný diel
+                a pripraví najvhodnejší spôsob výroby.
+
+            </p>
+
+            <div class="summaryCard">
+
+                <h3>
+
+                    Čo bude nasledovať?
+
+                </h3>
+
+                <ul class="summaryList">
+
+                    <li>✔ Skontrolujeme fotografie a všetky podklady.</li>
+
+                    <li>✔ Posúdime možnosti výroby náhradného dielu.</li>
+
+                    <li>✔ Ak bude potrebné, odporučíme vhodnejší materiál alebo technológiu výroby.</li>
+
+                    <li>✔ Pripravíme cenovú ponuku.</li>
+
+                    <li>✔ Počas pracovných dní vás budeme kontaktovať čo najskôr, zvyčajne do 24 hodín.</li>
+
+                </ul>
+
+            </div>
+
+            <div class="formActions">
+
+                <a
+                    href="index.html"
+                    class="secondaryButton">
+
+                    ← Späť na hlavnú stránku
+
+                </a>
+
+                <button
+                    type="button"
+                    class="primaryButton"
+                    onclick="location.reload()">
+
+                    Nový dopyt
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
